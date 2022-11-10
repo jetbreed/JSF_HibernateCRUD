@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+    
+ 	 <h:body class="w3-light-grey">    
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+            
+            	<!-- 	<h:link value="Add New Product" outcome="add"></h:link> -->
+				<br></br>
+				<h:form>
+					<h:commandLink class="w3-btn w3-border" style="text-align:center;" value="ADDING" 
+						action="#{dataController.move()}">
+					</h:commandLink>
+					
+					<h:dataTable class="w3-table-all w3-hoverable" style="padding:10px; background:#fcfcfcf; width:100%" var="pr" value="#{dataController.findAll()}" 
+					border="1" cellpadding="6" cellspacing="0">
+					
+					<h:column style="padding:100px">
+						<f:facet name="header">ID</f:facet>
+						<h:outputText value="${pr.userId}"></h:outputText>
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">First Name</f:facet>
+						<h:outputText value="${pr.firstname}"></h:outputText>
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Last Name</f:facet>
+						<h:outputText value="${pr.lastname}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="${pr.age}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="${pr.email}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="${pr.gender}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="${pr.phone}"></h:outputText>
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Option</f:facet>
+						<h:commandLink value="Delete" 
+						action="#{dataController.delete(pr)}"
+						onclick="return confirm('Are You Sure?')">
+						</h:commandLink>
+						|
+						<h:commandLink value="Edit" 
+						action="#{dataController.edit(pr)}">
+						</h:commandLink>
+					</h:column>
+					
+					</h:dataTable>
+			
+				</h:form>
+            
+    	    </ui:define>
+    	</ui:composition>
+
+    </h:body>
+</html>

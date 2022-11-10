@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+    
+    <h:body class="w3-light-grey">    
+        <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+                    
+                <div class="w3-content w3-justify w3-text-black"
+                     id="about">
+                    <h2 class="w3-text-black">
+                        Edit Client
+                    </h2>
+                    <hr style="width:200px" class="w3-opacity">
+                    </hr>
+            
+                    <h:form prependId="false">
+                    <h:panelGrid columns="2" cellpadding="2" cellspacing="2">
+                        
+                        <p style="margin-top: 15px">
+                            <label style="font-weight: bolder;
+	                            font-size:25px;" 
+	                            class="w3-input w3-padding">
+                                USER CODE
+                            </label>
+                            <h:outputText 
+                                style="font-weight: bolder;
+                                font-size:25px;"
+                                class="w3-input"
+                                value="NIIT/2022/ST-00#{dataController.client.userId}"
+                             ></h:outputText>
+                        </p>
+                        <p style="margin-top: 15px">
+                            <label class="w3-blue w3-padding">
+                                First Name:
+                            </label>
+                            <h:inputText 
+                                class="w3-input w3-border"
+                                value="#{dataController.client.firstname}"
+                             ></h:inputText>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Last Name:
+                            </label>
+                            <h:inputText class="w3-input w3-border" 
+                                id="lName"
+                                value="#{dataController.client.lastname}"
+                               />
+                        </p>
+                        <p style="margin-top: 45px">
+                            <label style="position: absolute;
+                                   margin-top:-40px" 
+                                   class="w3-blue w3-padding">
+                                Gender:
+                            </label>
+                            <h:selectOneRadio 
+                                class="w3-input w3-border"
+                                value="#{dataController.client.gender}"
+                                >
+                                <f:selectItem itemValue="m" 
+                                              itemLabel="Male" />
+                                <f:selectItem itemValue="f" 
+                                             itemLabel="Female" />
+                           </h:selectOneRadio>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Date of Birth:
+                            </label>
+                                <h:inputText class="w3-input 
+                                    w3-border" 
+                                    value="#{dataController.client.age}"
+                                >
+                                    <f:convertDateTime pattern="MM/dd/yy" type="date"/>
+                                </h:inputText>
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Phone Number:
+                            </label>
+                            <h:inputText class="w3-input 
+                                w3-border"
+                                value="#{dataController.client.phone}"
+                                requiredMessage="Phone Number Required"
+                                >
+                            </h:inputText>
+                                
+                        </p>
+                        <p>
+                            <label class="w3-blue w3-padding">
+                                Email:
+                            </label>
+                            <h:inputText class="w3-input 
+                                w3-border" 
+                                value="#{dataController.client.email}"
+                                requiredMessage="Enter Email"/>
+                        </p>
+                        
+                            <h:commandButton style="
+                                font-weight: bolder"
+                                class="w3-button 
+                                w3-blue w3-padding-large" 
+                                value="Update" 
+                                action="#{dataController.edit()}">
+                            </h:commandButton>
+			            
+                    </h:panelGrid>
+                    </h:form>
+                </div>
+                </ui:define>
+            </ui:composition>
+
+    </h:body>
+</html>
+

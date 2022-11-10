@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+	<h:form prependId="false">
+		<h:panelGrid columns="2" cellpadding="2" cellspacing="2">
+
+			<h:outputText value="Name"></h:outputText>
+			<h:inputText value="#{clientController.client.firstname}"></h:inputText>
+			
+			<h:outputText value="Price"></h:outputText>
+			<h:inputText value="#{clientController.client.lastname}"></h:inputText>
+			
+			<h:outputText value="Quantity"></h:outputText>
+			<h:inputText value="#{clientController.client.email}"></h:inputText>
+			
+			<h:outputText value="Description"></h:outputText>
+			<h:inputTextarea cols="20" rows="5" value="#{clientController.client.phone}"></h:inputTextarea>
+			
+			<h:commandButton action="#{clientController.add()}" value="Save"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+
+</body> 
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>Hoverable Table</h2>
+
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html> 
